@@ -55,7 +55,7 @@ The SDK can be installed with either *pip* or *poetry* package managers.
 *PIP* is the default package installer for Python, enabling easy installation and management of packages from PyPI via the command line.
 
 ```bash
-pip install nest-api
+pip install nest-sdk-python-test-v2
 ```
 
 ### Poetry
@@ -63,7 +63,7 @@ pip install nest-api
 *Poetry* is a modern tool that simplifies dependency management and package publishing by using a single `pyproject.toml` file to handle project metadata and dependencies.
 
 ```bash
-poetry add nest-api
+poetry add nest-sdk-python-test-v2
 ```
 
 ### Shell and script usage with `uv`
@@ -71,7 +71,7 @@ poetry add nest-api
 You can use this SDK in a Python shell with [uv](https://docs.astral.sh/uv/) and the `uvx` command that comes with it like so:
 
 ```shell
-uvx --from nest-api python
+uvx --from nest-sdk-python-test-v2 python
 ```
 
 It's also possible to write a standalone Python script without needing to set up a whole project like so:
@@ -81,11 +81,11 @@ It's also possible to write a standalone Python script without needing to set up
 # /// script
 # requires-python = ">=3.9"
 # dependencies = [
-#     "nest-api",
+#     "nest-sdk-python-test-v2",
 # ]
 # ///
 
-from nest_api import NestAPI
+from nest_sdk_python_test_v2 import NestAPI
 
 sdk = NestAPI(
   # SDK arguments
@@ -115,12 +115,12 @@ Generally, the SDK will work well with most IDEs out of the box. However, when u
 
 ```python
 # Synchronous Example
-from nest_api import NestAPI
+from nest_sdk_python_test_v2 import NestAPI
 
 
-with NestAPI() as na_client:
+with NestAPI() as nest_api:
 
-    res = na_client.git_hub.list_issues(page=1)
+    res = nest_api.git_hub.list_issues(page=1)
 
     # Handle response
     print(res)
@@ -132,13 +132,13 @@ The same SDK client can also be used to make asychronous requests by importing a
 ```python
 # Asynchronous Example
 import asyncio
-from nest_api import NestAPI
+from nest_sdk_python_test_v2 import NestAPI
 
 async def main():
 
-    async with NestAPI() as na_client:
+    async with NestAPI() as nest_api:
 
-        res = await na_client.git_hub.list_issues_async(page=1)
+        res = await nest_api.git_hub.list_issues_async(page=1)
 
         # Handle response
         print(res)
@@ -181,13 +181,13 @@ Some of the endpoints in this SDK support retries. If you use the SDK without an
 
 To change the default retry strategy for a single API call, simply provide a `RetryConfig` object to the call:
 ```python
-from nest_api import NestAPI
-from nest_api.utils import BackoffStrategy, RetryConfig
+from nest_sdk_python_test_v2 import NestAPI
+from nest_sdk_python_test_v2.utils import BackoffStrategy, RetryConfig
 
 
-with NestAPI() as na_client:
+with NestAPI() as nest_api:
 
-    res = na_client.git_hub.list_issues(page=1,
+    res = nest_api.git_hub.list_issues(page=1,
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
     # Handle response
@@ -197,15 +197,15 @@ with NestAPI() as na_client:
 
 If you'd like to override the default retry strategy for all operations that support retries, you can use the `retry_config` optional parameter when initializing the SDK:
 ```python
-from nest_api import NestAPI
-from nest_api.utils import BackoffStrategy, RetryConfig
+from nest_sdk_python_test_v2 import NestAPI
+from nest_sdk_python_test_v2.utils import BackoffStrategy, RetryConfig
 
 
 with NestAPI(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
-) as na_client:
+) as nest_api:
 
-    res = na_client.git_hub.list_issues(page=1)
+    res = nest_api.git_hub.list_issues(page=1)
 
     # Handle response
     print(res)
@@ -216,7 +216,7 @@ with NestAPI(
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-[`APIError`](https://github.com/abhayymishraa/python-owasp-nest-sdk/blob/master/./src/nest_api/models/apierror.py) is the base class for all HTTP error responses. It has the following properties:
+[`APIError`](https://github.com/abhayymishraa/python-owasp-nest-sdk/blob/master/./src/nest_sdk_python_test_v2/models/apierror.py) is the base class for all HTTP error responses. It has the following properties:
 
 | Property           | Type             | Description                                                                             |
 | ------------------ | ---------------- | --------------------------------------------------------------------------------------- |
@@ -229,14 +229,14 @@ with NestAPI(
 
 ### Example
 ```python
-from nest_api import NestAPI, models
+from nest_sdk_python_test_v2 import NestAPI, models
 
 
-with NestAPI() as na_client:
+with NestAPI() as nest_api:
     res = None
     try:
 
-        res = na_client.git_hub.get_user(login="Enos13")
+        res = nest_api.git_hub.get_user(login="Enos13")
 
         # Handle response
         print(res)
@@ -257,7 +257,7 @@ with NestAPI() as na_client:
 
 ### Error Classes
 **Primary error:**
-* [`APIError`](https://github.com/abhayymishraa/python-owasp-nest-sdk/blob/master/./src/nest_api/models/apierror.py): The base class for HTTP error responses.
+* [`APIError`](https://github.com/abhayymishraa/python-owasp-nest-sdk/blob/master/./src/nest_sdk_python_test_v2/models/apierror.py): The base class for HTTP error responses.
 
 <details><summary>Less common errors (6)</summary>
 
@@ -269,9 +269,9 @@ with NestAPI() as na_client:
     * [`httpx.TimeoutException`](https://www.python-httpx.org/exceptions/#httpx.TimeoutException): HTTP request timed out.
 
 
-**Inherit from [`APIError`](https://github.com/abhayymishraa/python-owasp-nest-sdk/blob/master/./src/nest_api/models/apierror.py)**:
-* [`UserErrorResponse`](https://github.com/abhayymishraa/python-owasp-nest-sdk/blob/master/./src/nest_api/models/usererrorresponse.py): Not Found. Status code `404`. Applicable to 1 of 11 methods.*
-* [`ResponseValidationError`](https://github.com/abhayymishraa/python-owasp-nest-sdk/blob/master/./src/nest_api/models/responsevalidationerror.py): Type mismatch between the response data and the expected Pydantic model. Provides access to the Pydantic validation error via the `cause` attribute.
+**Inherit from [`APIError`](https://github.com/abhayymishraa/python-owasp-nest-sdk/blob/master/./src/nest_sdk_python_test_v2/models/apierror.py)**:
+* [`UserErrorResponse`](https://github.com/abhayymishraa/python-owasp-nest-sdk/blob/master/./src/nest_sdk_python_test_v2/models/usererrorresponse.py): Not Found. Status code `404`. Applicable to 1 of 11 methods.*
+* [`ResponseValidationError`](https://github.com/abhayymishraa/python-owasp-nest-sdk/blob/master/./src/nest_sdk_python_test_v2/models/responsevalidationerror.py): Type mismatch between the response data and the expected Pydantic model. Provides access to the Pydantic validation error via the `cause` attribute.
 
 </details>
 
@@ -293,14 +293,14 @@ You can override the default server globally by passing a server index to the `s
 #### Example
 
 ```python
-from nest_api import NestAPI
+from nest_sdk_python_test_v2 import NestAPI
 
 
 with NestAPI(
     server_idx=1,
-) as na_client:
+) as nest_api:
 
-    res = na_client.git_hub.list_issues(page=1)
+    res = nest_api.git_hub.list_issues(page=1)
 
     # Handle response
     print(res)
@@ -311,14 +311,14 @@ with NestAPI(
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
-from nest_api import NestAPI
+from nest_sdk_python_test_v2 import NestAPI
 
 
 with NestAPI(
     server_url="http://nest.owasp.dev",
-) as na_client:
+) as nest_api:
 
-    res = na_client.git_hub.list_issues(page=1)
+    res = nest_api.git_hub.list_issues(page=1)
 
     # Handle response
     print(res)
@@ -335,7 +335,7 @@ This allows you to wrap the client with your own custom logic, such as adding cu
 
 For example, you could specify a header for every request that this sdk makes as follows:
 ```python
-from nest_api import NestAPI
+from nest_sdk_python_test_v2 import NestAPI
 import httpx
 
 http_client = httpx.Client(headers={"x-custom-header": "someValue"})
@@ -344,8 +344,8 @@ s = NestAPI(client=http_client)
 
 or you could wrap the client with your own custom logic:
 ```python
-from nest_api import NestAPI
-from nest_api.httpclient import AsyncHttpClient
+from nest_sdk_python_test_v2 import NestAPI
+from nest_sdk_python_test_v2.httpclient import AsyncHttpClient
 import httpx
 
 class CustomClient(AsyncHttpClient):
@@ -415,17 +415,17 @@ The `NestAPI` class implements the context manager protocol and registers a fina
 [context-manager]: https://docs.python.org/3/reference/datamodel.html#context-managers
 
 ```python
-from nest_api import NestAPI
+from nest_sdk_python_test_v2 import NestAPI
 def main():
 
-    with NestAPI() as na_client:
+    with NestAPI() as nest_api:
         # Rest of application here...
 
 
 # Or when using async:
 async def amain():
 
-    async with NestAPI() as na_client:
+    async with NestAPI() as nest_api:
         # Rest of application here...
 ```
 <!-- End Resource Management [resource-management] -->
@@ -437,11 +437,11 @@ You can setup your SDK to emit debug logs for SDK requests and responses.
 
 You can pass your own logger class directly into your SDK.
 ```python
-from nest_api import NestAPI
+from nest_sdk_python_test_v2 import NestAPI
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
-s = NestAPI(debug_logger=logging.getLogger("nest_api"))
+s = NestAPI(debug_logger=logging.getLogger("nest_sdk_python_test_v2"))
 ```
 <!-- End Debugging [debug] -->
 

@@ -18,12 +18,12 @@ Retrieve a paginated list of OWASP chapters.
 
 <!-- UsageSnippet language="python" operationID="list_chapters" method="get" path="/api/v1/owasp/chapters/" -->
 ```python
-from nest_api import NestAPI
+from nest_sdk_python_test_v2 import NestAPI
 
 
-with NestAPI() as na_client:
+with NestAPI() as nest_api:
 
-    res = na_client.owasp.list_chapters(country="India", region="Asia", page=1)
+    res = nest_api.owasp.list_chapters(country="India", region="Asia", page=1)
 
     # Handle response
     print(res)
@@ -59,12 +59,12 @@ Retrieve a paginated list of OWASP committees.
 
 <!-- UsageSnippet language="python" operationID="list_committees" method="get" path="/api/v1/owasp/committees/" -->
 ```python
-from nest_api import NestAPI
+from nest_sdk_python_test_v2 import NestAPI
 
 
-with NestAPI() as na_client:
+with NestAPI() as nest_api:
 
-    res = na_client.owasp.list_committees(page=1)
+    res = nest_api.owasp.list_committees(page=1)
 
     # Handle response
     print(res)
@@ -98,12 +98,12 @@ Retrieve a paginated list of OWASP events.
 
 <!-- UsageSnippet language="python" operationID="list_events" method="get" path="/api/v1/owasp/events/" -->
 ```python
-from nest_api import NestAPI
+from nest_sdk_python_test_v2 import NestAPI
 
 
-with NestAPI() as na_client:
+with NestAPI() as nest_api:
 
-    res = na_client.owasp.list_events(page=1)
+    res = nest_api.owasp.list_events(page=1)
 
     # Handle response
     print(res)
@@ -137,12 +137,12 @@ Retrieve a paginated list of OWASP projects.
 
 <!-- UsageSnippet language="python" operationID="list_projects" method="get" path="/api/v1/owasp/projects/" -->
 ```python
-from nest_api import NestAPI
+from nest_sdk_python_test_v2 import NestAPI
 
 
-with NestAPI() as na_client:
+with NestAPI() as nest_api:
 
-    res = na_client.owasp.list_projects(page=1)
+    res = nest_api.owasp.list_projects(page=1)
 
     # Handle response
     print(res)
