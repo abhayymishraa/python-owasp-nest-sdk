@@ -7,7 +7,7 @@ sources:
     transformations:
       - removeUnused: true
     registry:
-      location: registry.speakeasyapi.dev/owasp/nest
+      location: registry.speakeasyapi.dev/owasp/nest/python-sdk
 targets:
   nest-api:
     target: python
