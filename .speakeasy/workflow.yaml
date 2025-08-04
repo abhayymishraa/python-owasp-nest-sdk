@@ -1,22 +1,22 @@
 workflowVersion: 1.0.0
 speakeasyVersion: latest
 sources:
-  owasp-nest-openapi:
-    inputs:
-      - location: https://0fb761fb95ab.ngrok-free.app/api/v1/openapi.json
-    transformations:
-      - removeUnused: true
-    registry:
-      location: registry.speakeasyapi.dev/owasp/nest/python-sdk
+    owasp-nest-openapi:
+        inputs:
+            - location: https://c7b0141c741e.ngrok-free.app/api/v1/openapi.json
+        transformations:
+            - removeUnused: true
+        registry: 
+            location: registry.speakeasyapi.dev/owasp/nest/python-sdk
 targets:
-  nest-api:
-    target: python
-    source: owasp-nest-openapi
-    output: .
-    publish:
-      pypi:
-        token: $pypi_token
-    codeSamples:
-      registry:
-        location: registry.speakeasyapi.dev/owasp/nest/owasp-nest-api-code-samples
-      blocking: false
+    nest-api:
+        target: python
+        source: owasp-nest-openapi
+        output: .
+        publish:
+            pypi:
+                token: $pypi_token
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/owasp/nest/owasp-nest-api-code-samples
+            blocking: false
