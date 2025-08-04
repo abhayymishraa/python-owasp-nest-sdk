@@ -1,0 +1,41 @@
+speakeasyVersion: 1.596.0
+sources:
+    owasp-nest-openapi:
+        sourceNamespace: python-sdk
+        sourceRevisionDigest: sha256:2104f59ecf36097d4b263b6b6d1d986f1b83a8ba28e98d83fcfeffbd1d33f987
+        sourceBlobDigest: sha256:89592b4c55fb576c581d836413657a9726893e095470dc654d4e898c8f12bc08
+        tags:
+            - latest
+            - speakeasy-sdk-regen-1754291105
+            - 1.0.0
+targets:
+    nest-api:
+        source: owasp-nest-openapi
+        sourceNamespace: python-sdk
+        sourceRevisionDigest: sha256:2104f59ecf36097d4b263b6b6d1d986f1b83a8ba28e98d83fcfeffbd1d33f987
+        sourceBlobDigest: sha256:89592b4c55fb576c581d836413657a9726893e095470dc654d4e898c8f12bc08
+        codeSamplesNamespace: owasp-nest-api-python-code-samples
+        codeSamplesRevisionDigest: sha256:369602bbd72bd9595692deed5f24ad11f36ea81cd7c08390e7be8e36808425e7
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        owasp-nest-openapi:
+            inputs:
+                - location: https://0fb761fb95ab.ngrok-free.app/api/v1/openapi.json
+            transformations:
+                - removeUnused: true
+            registry:
+                location: registry.speakeasyapi.dev/owasp/nest/python-sdk
+    targets:
+        nest-api:
+            target: python
+            source: owasp-nest-openapi
+            output: .
+            publish:
+                pypi:
+                    token: $pypi_token
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/owasp/nest/owasp-nest-api-python-code-samples
+                blocking: false
