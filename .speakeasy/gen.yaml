@@ -16,6 +16,9 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: false
     oAuth2PasswordEnabled: false
+  retries:
+    maxRetries: 3
+    backoffStrategy: exponential
 python:
   version: 3.13.0
   authors:
