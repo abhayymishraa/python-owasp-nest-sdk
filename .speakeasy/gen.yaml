@@ -55,7 +55,7 @@ python:
   methodArguments: infer-optional-args
   moduleName: ""
   outputModelSuffix: output
-  packageName: nest-sdk-python-test-v1
+  packageName: nest-sdk-python-test-v2
   pytestFilterWarnings: []
   pytestTimeout: 0
   responseFormat: flat
