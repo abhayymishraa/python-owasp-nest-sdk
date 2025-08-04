@@ -21,12 +21,12 @@ Retrieve a paginated list of GitHub issues.
 
 <!-- UsageSnippet language="python" operationID="list_issues" method="get" path="/api/v1/github/issues/" -->
 ```python
-from nest_api import NestAPI
+from nest_sdk_python_test_v2 import NestAPI
 
 
-with NestAPI() as na_client:
+with NestAPI() as nest_api:
 
-    res = na_client.git_hub.list_issues(page=1)
+    res = nest_api.git_hub.list_issues(page=1)
 
     # Handle response
     print(res)
@@ -61,12 +61,12 @@ Retrieve a paginated list of GitHub labels.
 
 <!-- UsageSnippet language="python" operationID="list_labels" method="get" path="/api/v1/github/labels/" -->
 ```python
-from nest_api import NestAPI
+from nest_sdk_python_test_v2 import NestAPI
 
 
-with NestAPI() as na_client:
+with NestAPI() as nest_api:
 
-    res = na_client.git_hub.list_labels(color="d93f0b", page=1)
+    res = nest_api.git_hub.list_labels(color="d93f0b", page=1)
 
     # Handle response
     print(res)
@@ -101,12 +101,12 @@ Retrieve a paginated list of GitHub organizations.
 
 <!-- UsageSnippet language="python" operationID="list_organizations" method="get" path="/api/v1/github/organizations/" -->
 ```python
-from nest_api import NestAPI
+from nest_sdk_python_test_v2 import NestAPI
 
 
-with NestAPI() as na_client:
+with NestAPI() as nest_api:
 
-    res = na_client.git_hub.list_organizations(location="United States of America", page=1)
+    res = nest_api.git_hub.list_organizations(location="United States of America", page=1)
 
     # Handle response
     print(res)
@@ -141,12 +141,12 @@ Retrieve a paginated list of GitHub releases.
 
 <!-- UsageSnippet language="python" operationID="list_releases" method="get" path="/api/v1/github/releases/" -->
 ```python
-from nest_api import NestAPI
+from nest_sdk_python_test_v2 import NestAPI
 
 
-with NestAPI() as na_client:
+with NestAPI() as nest_api:
 
-    res = na_client.git_hub.list_releases(tag_name="v1.0.0", page=1)
+    res = nest_api.git_hub.list_releases(tag_name="v1.0.0", page=1)
 
     # Handle response
     print(res)
@@ -181,12 +181,12 @@ Retrieve a paginated list of GitHub repositories.
 
 <!-- UsageSnippet language="python" operationID="list_repositories" method="get" path="/api/v1/github/repositories/" -->
 ```python
-from nest_api import NestAPI
+from nest_sdk_python_test_v2 import NestAPI
 
 
-with NestAPI() as na_client:
+with NestAPI() as nest_api:
 
-    res = na_client.git_hub.list_repositories(page=1)
+    res = nest_api.git_hub.list_repositories(page=1)
 
     # Handle response
     print(res)
@@ -220,12 +220,12 @@ Retrieve a paginated list of GitHub users.
 
 <!-- UsageSnippet language="python" operationID="list_users" method="get" path="/api/v1/github/users/" -->
 ```python
-from nest_api import NestAPI
+from nest_sdk_python_test_v2 import NestAPI
 
 
-with NestAPI() as na_client:
+with NestAPI() as nest_api:
 
-    res = na_client.git_hub.list_users(location="India", page=1)
+    res = nest_api.git_hub.list_users(location="India", page=1)
 
     # Handle response
     print(res)
@@ -261,12 +261,12 @@ Retrieve a GitHub user by login.
 
 <!-- UsageSnippet language="python" operationID="get_user" method="get" path="/api/v1/github/users/{login}" -->
 ```python
-from nest_api import NestAPI
+from nest_sdk_python_test_v2 import NestAPI
 
 
-with NestAPI() as na_client:
+with NestAPI() as nest_api:
 
-    res = na_client.git_hub.get_user(login="Enos13")
+    res = nest_api.git_hub.get_user(login="Enos13")
 
     # Handle response
     print(res)

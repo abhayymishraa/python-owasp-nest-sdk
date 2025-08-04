@@ -1,6 +1,6 @@
 [project]
-name = "nest-api"
-version = "3.13.0"
+name = "nest-sdk-python-test-v2"
+version = "1.0.0"
 description = "Python Client SDK for OWASP Nest."
 authors = [{ name = "Nest" },]
 readme = "README-PYPI.md"
@@ -14,12 +14,12 @@ dependencies = [
 [tool.poetry]
 repository = "https://github.com/abhayymishraa/python-owasp-nest-sdk.git"
 packages = [
-    { include = "nest_api", from = "src" }
+    { include = "nest_sdk_python_test_v2", from = "src" }
 ]
-include = ["py.typed", "src/nest_api/py.typed"]
+include = ["py.typed", "src/nest_sdk_python_test_v2/py.typed"]
 
 [tool.setuptools.package-data]
-"*" = ["py.typed", "src/nest_api/py.typed"]
+"*" = ["py.typed", "src/nest_sdk_python_test_v2/py.typed"]
 
 [virtualenvs]
 in-project = true
