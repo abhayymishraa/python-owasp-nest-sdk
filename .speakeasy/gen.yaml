@@ -24,7 +24,7 @@ python:
   clientServerStatusCodesAsErrors: true
   defaultErrorName: SDKError
   description: Python Client SDK for OWASP Nest.
-  enableCustomCodeRegions: true
+  enableCustomCodeRegions: false
   enumFormat: enum
   fixFlags:
     responseRequiredSep2024: true
