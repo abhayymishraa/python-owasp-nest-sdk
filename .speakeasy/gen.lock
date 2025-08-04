@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 5f111fe4-6168-4754-8b07-dddb553bd4bb
 management:
-  docChecksum: 01020e48eaac353b33fabaf80b36fc37
+  docChecksum: 9f44804a45f4fe8f360ab335930e791e
   docVersion: 1.0.0
   speakeasyVersion: 1.596.0
   generationVersion: 2.672.0
-  releaseVersion: 1.0.0
-  configChecksum: 6ff58656134b9ad93822f43e285018d7
+  releaseVersion: 1.0.1
+  configChecksum: cd84f52ee5fd10b5a8af3854eea745d0
   repoURL: https://github.com/abhayymishraa/python-owasp-nest-sdk.git
   installationURL: https://github.com/abhayymishraa/python-owasp-nest-sdk.git
   published: true

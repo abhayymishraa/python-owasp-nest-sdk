@@ -285,10 +285,10 @@ with NestAPI() as nest_api:
 
 You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
 
-| #   | Server                   | Description |
-| --- | ------------------------ | ----------- |
-| 0   | `https://nest.owasp.org` | Production  |
-| 1   | `http://nest.owasp.dev`  | Staging     |
+| #   | Server                                                  | Description |
+| --- | ------------------------------------------------------- | ----------- |
+| 0   | `https://nest.owasp.oradfkljaskjdfikqewjdiojqeoildjrqo` | Production  |
+| 1   | `http://nest.owasp.dev`                                 | Staging     |
 
 #### Example
 

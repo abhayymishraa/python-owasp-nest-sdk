@@ -19,3 +19,13 @@ Based on:
 - [python v1.0.0] .
 ### Releases
 - [PyPI v1.0.0] https://pypi.org/project/nest-sdk-python-test-v2/1.0.0 - .
+
+## 2025-08-04 18:27:39
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.596.0 (2.672.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.0.1] .
+### Releases
+- [PyPI v1.0.1] https://pypi.org/project/nest-sdk-python-test-v2/1.0.1 - .

@@ -15,7 +15,7 @@ from typing import Dict, Optional, Tuple, Union
 
 
 SERVERS = [
-    "https://nest.owasp.org",
+    "https://nest.owasp.oradfkljaskjdfikqewjdiojqeoildjrqo",
     # Production
     "http://nest.owasp.dev",
     # Staging
