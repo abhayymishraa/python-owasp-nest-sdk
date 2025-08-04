@@ -11,7 +11,7 @@ sources:
 targets:
   nest-api:
     target: python
-    source: owasp-nest-api-sdk
+    source: owasp-nest-openapi
     output: .
     publish:
       pypi:
