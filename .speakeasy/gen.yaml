@@ -16,11 +16,19 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: false
     oAuth2PasswordEnabled: false
+  sdkHooksConfigAccess: true
+  tests:
+    generateTests: false
+    generateNewTests: true
+    skipResponseBodyAssertions: false
   retries:
-    maxRetries: 3
     backoffStrategy: exponential
+    maxRetries: 3
 python:
-  version: 3.13.0
+  version: 1.0.0
+  additionalDependencies:
+    dev: {}
+    main: {}
   authors:
     - Nest
   baseErrorName: APIError
@@ -48,5 +56,7 @@ python:
   moduleName: ""
   outputModelSuffix: output
   packageName: nest-api
+  pytestFilterWarnings: []
+  pytestTimeout: 0
   responseFormat: flat
   templateVersion: v2

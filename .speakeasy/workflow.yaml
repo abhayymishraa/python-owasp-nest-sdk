@@ -6,7 +6,7 @@ sources:
             - location: https://c7b0141c741e.ngrok-free.app/api/v1/openapi.json
         transformations:
             - removeUnused: true
-        registry: 
+        registry:
             location: registry.speakeasyapi.dev/owasp/nest/python-sdk
 targets:
     nest-api:
@@ -18,5 +18,5 @@ targets:
                 token: $pypi_token
         codeSamples:
             registry:
-                location: registry.speakeasyapi.dev/owasp/nest/owasp-nest-api-code-samples
+                location: registry.speakeasyapi.dev/owasp/nest/owasp-nest-api-python-code-samples
             blocking: false
